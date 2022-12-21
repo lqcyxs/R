@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../images/R.ico" type="image/x-icon">
+    <title>操作台 主界面1</title>
+    <script src="../js/index.js"></script>
+    <link rel="stylesheet" href="nav-a.css" type="text/css">
+    <style type="text/css">
+        a {
+            text-decoration: none;
+            color: #000;
+        }
+
+        select:hover,
+        button:hover,
+        a:hover {
+            cursor: url('../images/shubiao-3.ico'), auto;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: "宋体";
+        }
+
+        #wu,
+        html,
+        body {
+            cursor: url('../images/shubiao-2.ico'), auto;
+        }
+
+        /* 整体盒子-模型 */
+        #hezi {
+            width: 1055px;
+            height: 800px;
+            margin: 35px auto;
+        }
+
+        .hezi-img,
+        .hezi-img img {
+            width: 1055px;
+            height: 94px;
+        }
+
+        /* 主界面-模型 */
+        .hezi-body {
+            height: 595px;
+        }
+
+        /* 主页-模型 */
+        .zy {
+            width: 1055px;
+            height: 554px;
+            background: url(../images/yz-1.png) no-repeat;
+            background-size: cover;
+            position: relative;
+        }
+
+        .zy-yi {
+            width: 226px;
+            height: 106px;
+            left: 7px;
+            top: 14px;
+            position: absolute;
+        }
+
+        .zy-yi button {
+            width: 100px;
+            height: 31px;
+            background-color: #e6cfbd;
+            /* border-radius: 4px; */
+            border: 2px solid gray;
+            font-size: 14px;
+        }
+
+        .zy-yi button:nth-child(1) {
+            margin-top: 39px;
+        }
+
+        .zy-yi button:nth-child(1),
+        .zy-yi button:nth-child(3) {
+            margin-left: 8px;
+        }
+
+        .zy-yi button:nth-child(3) {
+            margin-top: 3.5px;
+        }
+
+        .zy-er {
+            width: 226px;
+            height: 91px;
+            left: 7px;
+            top: 136px;
+            position: absolute;
+        }
+
+        .zy-er select {
+            background-color: #e6cfbd;
+            border: 1px solid #fdecde;
+            width: 135px;
+            height: 21px;
+            margin-top: 6.4px;
+            margin-right: 9px;
+            float: right;
+            /* 选中时，不显示边框 */
+            outline: none;
+            /* 不被遮挡 */
+            /* z-index: 1; */
+
+            /* 表样式清除 */
+            /* appearance:none;
+-moz-appearance:none;
+-webkit-appearance:none;
+background: url("../images/yt-4.png") no-repeat right center; */
+
+        }
+
+        .zy-er button {
+            background-color: #e6cfbd;
+            border: 2px solid gray;
+            width: 100px;
+            height: 31px;
+            margin-top: 31px;
+            font-size: 14px;
+        }
+
+        .zy-er button:nth-child(2) {
+            margin-left: 8px;
+        }
+
+        /* 主界面-导航栏 */
+        .zjm-nav {
+            height: 41px;
+            background: url(../images/yt-2.png) no-repeat;
+            background-size: cover;
+            display: flex;
+            text-align: center;
+        }
+
+        .zjm-nav a {
+            width: 110px;
+            height: 20px;
+            line-height: 20px;
+            margin: 9px 8px 0px;
+            font-size: 14px;
+
+            border-radius: 5px;
+            border: 2px solid gray;
+            background-color: #e6cfbd;
+            /*  3d阴影  阴影  内阴影 ：左右 上下 羽化 大小 颜色
+            box-shadow: 3px 3px 0px 0px #000, 0px 5px 5px 0px rgba(0, 0, 0, 0.6), inset 0px 0px 5px 5px #000*/
+            box-shadow: 3px 3px 0px 0px #000000, inset 0px 0px 20px -2px #ffffff;
+            /* filter: blur(1px); 羽化*/
+        }
+
+        /* 已按下导航栏-样式 */
+        .zjm-nav a:nth-child(1) {
+            border: 2px solid #000000;
+            background: linear-gradient(to right, #b9b9c3, #687892);
+        }
+
+        /* 整体盒子-导航栏 */
+        .hezi-nav {
+            height: 111px;
+            background: url(../images/yt-3.png) no-repeat;
+            background-size: cover;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            justify-content: space-around;
+        }
+
+        .hezi-nav a {
+            width: 95px;
+            height: 95px;
+            background: linear-gradient(to right, #dcd6d8, #b8b7bf);
+            margin: 0px 40px;
+            font-weight: bold;
+        }
+
+        .hezi-nav a img {
+            /* 设置居中 */
+            display: block;
+            margin: 12px auto 0px;
+        }
+
+        /* 已按下导航栏-样式 */
+        .hezi-nav a:nth-child(1) {
+            border-left: 2px solid #707070;
+            border-top: 1px solid gray;
+            background: linear-gradient(to right, #b9b9c3, #687892);
+        }
+
+        /* 渐变方向  结束 开始  deg表示度数
+        (to right, blue, red) (45deg, blue, red)
+
+        a:first-child  父子元素中的第一个
+        a:last-child   父子元素中的最后一个
+        a:nth-child(n) 2n或even 选中偶数 ;2n+1或odd 选中奇数
+
+        a:first-of-type
+        a:last-of-type
+        a:nth-of-type(n)
+        
+        a:not(a:first-child) 父子元素中选中的以外 反选*/
+    </style>
+</head>
+
+<body>
+    <div id="hezi">
+        <div class="hezi-img"><img src="../images/yt-1.png"></div>
+        <div class="hezi-body">
+            <div class="zy">
+                <div class="zy-yi">
+                    <!-- maintmode operation -->
+                    <button onclick="change(this)">初始化</button>
+                    <button onclick="change(this)">手动模式</button>
+                    <button onclick="change(this)">安全模式</button>
+                    <button onclick="change(this)">终止</button>
+                </div>
+                <div class="zy-er">
+                    <select name="selectList">
+                        <!-- selected预先选中 value发送给服务器的值 -->
+                        <option value="t0">001</option>
+                        <option value="t1">test1</option>
+                        <option value="t2">test2</option>
+                        <option value="t3">test3</option>
+                        <option value="t4">test4</option>
+                        <option value="t5">test5</option>
+                    </select>
+                    <button onclick="change(this)">工艺开始</button>
+                    <button onclick="change(this)">工艺停止</button>
+                </div>
+            </div>
+            <div class="zjm-nav">
+                <a id="wu">主页</a>
+                <a href="../nav-a/nav-aa.html" target="_blank">当前配方</a>
+                <a href="../nav-a/nav-aaa.html" target="_blank">已完成配方</a>
+            </div>
+        </div>
+        <div class="hezi-nav">
+            <a id="wu"><img src="../images/favicon-1.ico">主界面</a>
+            <a href="nav-b.html" target="_blank"><img src="../images/favicon-2.ico">维护</a>
+            <a href="nav-c.html" target="_blank"><img src="../images/favicon-3.ico">配方</a>
+            <a href="nav-d.html" target="_blank"><img src="../images/favicon-4.ico">数据</a>
+            <a href="nav-e.html" target="_blank"><img src="../images/favicon-5.ico">设置</a>
+            <a href="nav-f.html" target="_blank"><img src="../images/favicon-6.ico">报警</a>
+        </div>
+    </div>
+</body>
+<script>
+
+</script>
+
+</html>

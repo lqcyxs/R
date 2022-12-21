@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../images/R.ico" type="image/x-icon">
+    <title>操作台 数据3</title>
+    <style type="text/css">
+        a {
+            text-decoration: none;
+            color: #000;
+        }
+
+        a:hover {
+            cursor: url('../images/shubiao-3.ico'), auto;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: "宋体";
+        }
+
+        #wu,
+        html,
+        body {
+            cursor: url('../images/shubiao-2.ico'), auto;
+        }
+
+        /* 整体盒子-模型 */
+        #hezi {
+            width: 1055px;
+            height: 800px;
+            margin: 35px auto;
+        }
+
+        .hezi-img,
+        .hezi-img img {
+            width: 1055px;
+            height: 94px;
+        }
+
+        /* 主界面-模型 */
+        .hezi-body {
+            height: 595px;
+        }
+
+        /* 主页-模型 */
+        .zy {
+            width: 1055px;
+            height: 554px;
+            background:#e6cfbd;
+        }
+        /* 主界面-导航栏 */
+        .zjm-nav{
+            height: 41px;
+            background: url(../images/yt-2.png) no-repeat;
+            background-size: cover;
+            display: flex;
+            text-align: center;
+        }
+        .zjm-nav a{
+            width: 110px;
+            height: 20px;
+            line-height: 20px;
+            margin: 9px 8px 0px;
+            font-size: 14px;
+
+            border-radius: 5px;
+            border: 2px solid gray;
+            background-color: #e6cfbd;
+            /*  3d阴影  阴影  内阴影 ：左右 上下 羽化 大小 颜色
+            box-shadow: 3px 3px 0px 0px #000000, 0px 5px 12px 0px rgba(161, 16, 16, 0.6), inset 0px 0px 10px -5px #000000*/
+            box-shadow: 3px 3px 0px 0px #000000, inset 0px 0px 20px -2px #ffffff;
+        }
+        /* 已按下导航栏-样式 */
+        .zjm-nav a:nth-child(3){
+            border: 2px solid #000000;
+            background: linear-gradient(to right, #b9b9c3,#687892);
+        }
+        /* 整体盒子-导航栏 */
+        .hezi-nav{
+            height: 111px;
+            background: url(../images/yt-3.png) no-repeat;
+            background-size: cover;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            justify-content: space-around;
+        }
+        .hezi-nav a{
+            width: 95px;
+            height: 95px;
+            background: linear-gradient(to right, #dcd6d8,#b8b7bf);
+            margin: 0px 40px;
+            font-weight: bold;
+        }
+        .hezi-nav a img{
+            /* 设置居中 */
+            display: block;
+            margin: 12px auto 0px;
+        }
+        /* 已按下导航栏-样式 */
+        .hezi-nav a:nth-child(4){
+            border-left: 2px solid #707070;
+            border-top: 1px solid gray;
+            background: linear-gradient(to right, #b9b9c3,#687892);
+        }
+    </style>
+</head>
+
+<body>
+    <div id="hezi">
+        <div class="hezi-img"><img src="../images/yt-1.png"></div>
+        <div class="hezi-body">
+            <div class="zy">
+            </div>
+            <div class="zjm-nav">
+                <a href="../link/nav-d.html" target="_blank">实时数据</a>
+                <a href="nav-dd.html" target="_blank">历史数据</a>
+                <a id="wu">操作记录</a>
+                <a href="nav-dddd.html" target="_blank">晶圆数据</a>
+            </div>
+        </div>
+        <div class="hezi-nav">
+            <a href="../link/nav-a.html" target="_blank"><img src="../images/favicon-1.ico">主界面</a>
+            <a href="../link/nav-b.html" target="_blank"><img src="../images/favicon-2.ico">维护</a>
+            <a href="../link/nav-c.html" target="_blank"><img src="../images/favicon-3.ico">配方</a>
+            <a id="wu"><img src="../images/favicon-4.ico">数据</a>
+            <a href="../link/nav-e.html" target="_blank"><img src="../images/favicon-5.ico">设置</a>
+            <a href="../link/nav-f.html" target="_blank"><img src="../images/favicon-6.ico">报警</a>
+        </div>
+    </div>
+</body>
+<script>
+    // 方法一 js禁用页面文字选中
+    document.addEventListener('selectstart', function (e) {
+        var e = e || window.event; //兼容处理
+        e.preventDefault();//阻止默认事件
+    });
+    //方法二 js禁用页面文字选中
+    document.onselectstart = function () { return false; };
+</script>
+</body>
+
+</html>
